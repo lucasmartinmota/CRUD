@@ -1,0 +1,59 @@
+
+
+<!-- <h1 mat-dialog-title>Cadastrar</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="data.nome" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Sobrenome</mat-label>
+    <input matInput [(ngModel)]="data.sobrenome" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" [(ngModel)]="data.email" [email]="true" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Telefone</mat-label>
+    <input matInput type="number" [(ngModel)]="data.telefone" [valueAsNumber]="true" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Endereço</mat-label>
+    <input matInput [(ngModel)]="data.endereco" required>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button  (click)="onCancelar()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Criar</button>
+</div> -->
+<form #form [formGroup]="cadastroForm">
+  <h1 mat-dialog-title>Cadastrar</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="nome" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Sobrenome</mat-label>
+    <input matInput formControlName="sobrenome" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email" [email]="true" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Telefone</mat-label>
+    <input matInput type="number" formControlName="telefone" [valueAsNumber]="true" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Endereço</mat-label>
+    <input matInput formControlName="endereco" required>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button  (click)="onCancelar()">Cancelar</button>
+  <button mat-button [disabled]="cadastroForm.invalid" (click)="submitForm(cadastroForm)">Criar</button>
+</div>
+</form>
+
